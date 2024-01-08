@@ -1,0 +1,85 @@
+:root {
+  --hue: 43;
+}
+.editor-container {
+  width: 1000px;
+  height: 600px;
+  background-color: hsl(0 0% 98%);
+  border: 1px solid #2424;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  padding: 20px;
+  gap: 10px;
+}
+.editor-toolbar {
+  display: flex;
+}
+.green {
+  color:darkgreen;
+}
+.editor-toolset {
+  border-right: 1px solid #2424;
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}
+.editor-toolbar:nth-child(-1) {
+  border: 0;
+}
+.editor-textarea {
+  /* all: unset; */
+  background-color: #fff;
+  border: 1px solid #2424;
+  border-radius: 5px;
+  flex-grow: 1;
+  padding: 7px;
+  box-shadow: -1px 2px 4px -2px;
+  overflow: auto;
+}
+.editor-tool-btn {
+  all: unset;
+  font-weight: 100;
+  border-radius: 3px;
+  margin: 0 2px;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  width: 26px;
+  justify-content: center;
+}
+/* .editor-tool-btn:hover{
+    background-color: #fff;
+} */
+.editor-tool-btn-active {
+  background-color: hsl(var(--hue) 71% 88%);
+  color: hsl(var(--hue) 100% 35%);
+}
+.editor-tool-color .color-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin-left: -11px;
+}
+.editor-tool-color i {
+  border-bottom: 3px solid black;
+}
+
+.editor-form {
+  display: none;
+  position: absolute;
+  background: white;
+  z-index: 1;
+  border: 1px solid hsl(var(--hue) 50% 50%);
+  padding: 20px 10px;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 244px;
+  margin-left: 25px;
+  border-radius: 5px;
+}

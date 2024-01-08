@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.0/css/all.css"
+    />
+    <title>Upload Image</title>
+  </head>
+  <body>
+    <button modal-trigger="addlink">Add Link</button>
+    <div class="modal" modal-id="addlink">
+      <div class="modal-box">
+        <div class="modal-header">
+          <p class="modal-title"><i class="fas fa-link"></i> ADD LINK</p>
+          <i class="fas fa-times modal-close" modal-hide-trigger></i>
+        </div>
+        <div class="modal-body">
+          <div class="modal-input-group">
+            Enter Text :
+            <input type="text" name="link-text" />
+          </div>
+          <div class="modal-input-group">
+            Enter URL :
+            <input type="text" name="link-url" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="primary-button" modal-submit>Add</button>
+          <button class="secondary-button" modal-hide-trigger>Cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="modal.js"></script>
+</html>
+<style>
+  :root {
+    --hue: 200;
+  }
+</style>

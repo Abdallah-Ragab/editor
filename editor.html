@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="editor.css" />
+    <link rel="stylesheet" href="modal/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.0/css/all.css"
+    />
+
+    <title>Blog</title>
+  </head>
+  <body>
+    <div class="editor-container">
+      <div class="editor-header">
+        <div class="editor-toolbar">
+          <div class="editor-toolset">
+            <button class="editor-tool-btn" data-command="bold" title="Bold">
+              <i class="fas fa-sm fa-bold"></i>
+            </button>
+            <button
+              class="editor-tool-btn"
+              data-command="italic"
+              title="Italic"
+            >
+              <i class="fas fa-sm fa-italic"></i>
+            </button>
+            <button
+              class="editor-tool-btn"
+              data-command="underline"
+              title="Underline"
+            >
+              <i class="fas fa-sm fa-underline"></i>
+            </button>
+            <button
+              class="editor-tool-btn"
+              data-command="strikethrough"
+              title="Strikethrough"
+            >
+              <i class="fas fa-sm fa-strikethrough"></i>
+            </button>
+          </div>
+          <div class="editor-toolset">
+            <button
+              class="editor-tool-btn"
+              data-command="superscript"
+              title="Superscript"
+            >
+              <i class="fas fa-sm fa-superscript"></i>
+            </button>
+            <button
+              class="editor-tool-btn"
+              data-command="subscript"
+              title="Subscript"
+            >
+              <i class="fas fa-sm fa-subscript"></i>
+            </button>
+          </div>
+          <div class="editor-toolset" singleoption="true">
+            <button
+              class="editor-tool-btn"
+              data-command="insertUnorderedList"
+              title="Unordered List"
+            >
+              <i class="fas fa-sm fa-list-ul"></i>
+            </button>
+            <button
+              class="editor-tool-btn"
+              data-command="insertOrderedList"
+              title="Ordered List"
+            >
+              <i class="fas fa-sm fa-list-ol"></i>
+            </button>
+          </div>
+          <div class="editor-toolset">
+            <button
+              class="editor-tool-btn"
+              data-command="createLink"
+              title="Add Link"
+              modal-trigger="createLink"
+            >
+              <i class="fas fa-sm fa-link" modal-trigger="createLink"></i>
+            </button>
+            <div class="modal" modal-id="createLink">
+              <div class="modal-box">
+                <div class="modal-header">
+                  <p class="modal-title">
+                    <i class="fas fa-link"></i> ADD LINK
+                  </p>
+                  <i class="fas fa-times modal-close" modal-hide-trigger></i>
+                </div>
+                <div class="modal-body">
+                  <div class="modal-input-group">
+                    Enter Text :
+                    <input type="text" name="link-text" />
+                  </div>
+                  <div class="modal-input-group">
+                    Enter URL :
+                    <input type="text" name="link-url" />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="primary-button" modal-submit>Add</button>
+                  <button class="secondary-button" modal-hide-trigger>
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button
+              class="editor-tool-btn"
+              data-command="insertImage"
+              title="Add Image"
+              modal-trigger="insertImage"
+            >
+              <i class="fas fa-sm fa-image" modal-trigger="insertImage"></i>
+            </button>
+            <div class="modal" modal-id="insertImage">
+              <div class="modal-box">
+                <div class="modal-header">
+                  <p class="modal-title">
+                    <i class="fas fa-file-image"></i> ADD IMAGE
+                  </p>
+                  <i class="fas fa-times modal-close" modal-hide-trigger></i>
+                </div>
+                <div class="modal-body">
+                  <div class="modal-input-group">
+                    <label for="image">Upload Image :</label>
+                    <input type="file" accept=".jpg, .png, .jpeg, .gif"/>
+                  </div>
+                  <b>OR</b>
+                  <div class="modal-input-group">
+                    Enter URL :
+                    <input type="text" name="image-url" />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="primary-button" modal-submit>Add</button>
+                  <button class="secondary-button" modal-hide-trigger>
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="editor-toolset" singleoption="true">
+            <button
+              class="editor-tool-btn editor-tool-align"
+              data-command="justifyLeft"
+              title="Align Left"
+            >
+              <i class="fas fa-sm fa-align-left"></i>
+            </button>
+            <button
+              class="editor-tool-btn editor-tool-align"
+              data-command="justifyCenter"
+              title="Align Center"
+            >
+              <i class="fas fa-sm fa-align-center"></i>
+            </button>
+            <button
+              class="editor-tool-btn editor-tool-align"
+              data-command="justifyRight"
+              title="Align Right"
+            >
+              <i class="fas fa-sm fa-align-right"></i>
+            </button>
+            <button
+              class="editor-tool-btn editor-tool-align"
+              data-command="justifyFull"
+              title="Align Full"
+            >
+              <i class="fas fa-sm fa-align-justify"></i>
+            </button>
+          </div>
+          <div class="editor-toolset">
+            <button
+              class="editor-tool-btn"
+              data-command="outdent"
+              title="Outdent"
+            >
+              <i class="fas fa-sm fa-outdent"></i>
+            </button>
+            <button
+              class="editor-tool-btn"
+              data-command="Indent"
+              title="Indent"
+            >
+              <i class="fas fa-sm fa-indent"></i>
+            </button>
+          </div>
+          <div class="editor-toolset">
+            <!-- <button class="editor-tool-btn" data-command="copy" title="Copy">
+                            <i class="fas fa-sm fa-copy"></i>
+                        </button>
+                        <button class="editor-tool-btn" data-command="cut" title="Cut">
+                            <i class="fas fa-sm fa-cut"></i>
+                        </button>
+                        <button class="editor-tool-btn" data-command="paste" title="Paste">
+                            <i class="fas fa-sm fa-paste"></i>
+                        </button> -->
+            <button
+              class="editor-tool-btn editor-tool-color"
+              data-command="foreColor"
+              title="Foreground text color"
+            >
+              <i class="fas fa-sm fa-font"></i>
+              <input type="color" name="fore" class="color-input" />
+            </button>
+            <button
+              class="editor-tool-btn editor-tool-color"
+              data-command="backColor"
+              title="Background text color"
+            >
+              <i class="fas fa-sm fa-paint-roller"></i>
+              <input type="color" name="fore" class="color-input" />
+            </button>
+          </div>
+          <div class="editor-toolset">
+            <button class="editor-tool-btn" data-command="undo" title="Undo">
+              <i class="fas fa-sm fa-undo"></i>
+            </button>
+            <button class="editor-tool-btn" data-command="redo" title="Redo">
+              <i class="fas fa-sm fa-redo"></i>
+            </button>
+          </div>
+          <div class="editor-toolset">
+            <button
+              class="editor-tool-btn"
+              data-command="toggleSpellCheck"
+              title="Toggle Spell Check"
+            >
+              <i class="fas fa-sm fa-spell-check"></i>
+            </button>
+            <button
+              class="editor-tool-btn"
+              data-command="removeFormat"
+              title="Remove format"
+            >
+              <i class="fas fa-sm fa-remove-format"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="editor-textarea"
+        contenteditable="true"
+        spellcheck="true"
+      ></div>
+    </div>
+    <div class="loader-overlay">
+      <svg
+        class="loader"
+        version="1.1"
+        id="L9"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 100 100"
+        enable-background="new 0 0 0 0"
+        xml:space="preserve"
+        width="300px"
+      >
+        <path
+          fill="#fff"
+          d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            dur="1s"
+            from="0 50 50"
+            to="360 50 50"
+            repeatCount="indefinite"
+          />
+        </path>
+      </svg>
+    </div>
+  </body>
+  <script src="editor.js"></script>
+  <script src="editor-modal.js"></script>
+  <script src="modal/modal.js"></script>
+  <script></script>
+</html>

@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.modal,
+.loader-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #0000008c;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal-visible {
+  display: flex;
+}
+.modal-box {
+  box-shadow: -2px 2px 6px -3px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* font-family: cairo, sans-serif; */
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 13px;
+}
+.modal-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+  color: hsl(var(--hue), 40%, 40%);
+  letter-spacing: 0.8px;
+}
+.modal-close {
+  padding: 3px 5px;
+  border-radius: 50%;
+}
+.modal-close:hover {
+  color: red;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  gap: 10px;
+  min-width: 360px;
+  align-items: center;
+}
+.modal-body input[type="text"] {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid #797979;
+}
+.modal-body input[type="text"]:focus {
+  outline: hsl(var(--hue), 50%, 50%) 3px solid;
+}
+.modal-body b {
+  color: hsl(var(--hue), 40%, 40%);
+  font-size: 18px;
+}
+.modal-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.modal-footer button {
+  /* flex-grow: 1;  */
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+.modal-footer .primary-button {
+  background-color: hsl(var(--hue), 50%, 50%);
+  color: #fff;
+}
+.modal-footer .primary-button:hover {
+  background-color: hsl(var(--hue), 50%, 45%);
+}
+.modal-footer .secondary-button {
+  background-color: hsl(var(--hue), 20%, 95%);
+}
+.modal-footer .secondary-button:hover {
+  background-color: hsl(var(--hue), 20%, 90%);
+}
